@@ -2,7 +2,7 @@ from elasticsearch import Elasticsearch
 
 class ElasticAdaptor():
     def __init__(self):
-        self.client = Elasticsearch(hosts=["127.0.0.1:9200"])
+        self.client = Elasticsearch(hosts=["elasticsearch:9200"])
 
 
 if __name__ == '__main__':

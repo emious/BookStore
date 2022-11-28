@@ -9,7 +9,7 @@ from adapters.elastic.elastic_adapter import ElasticAdaptor
 
 class KafkaAdapter():
     def __init__(self):
-        self.kafka_producer = KafkaProducer(bootstrap_servers='127.0.0.1:9092')
+        self.kafka_producer = KafkaProducer(bootstrap_servers='kafka:9092')
 
     def produce_to_kafka(self,topic,value):
         # byte_value = value.encode()
@@ -19,7 +19,7 @@ class KafkaAdapter():
 
     def consume_kafka(self,topic,consumer_group):
         kafka_consumer = KafkaConsumer(topic,
-                                       group_id=consumer_group,bootstrap_servers='127.0.0.1:9092',max_poll_records = 1)
+                                       group_id=consumer_group,bootstrap_servers='kafka:9092',max_poll_records = 1)
 
         message_list = list()
 
